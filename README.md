@@ -21,7 +21,7 @@ Start = map
 -Install [VitaSDK](http://vitasdk.org) toolchain  
 -If you are on Windows, install [MSYS2](http://msys2.org) command shell  
 -Clone worminator repo into a folder somewhere  
--Build and install dependency library allegro_vita  
+-Build and install dependency library [allegro_vita](https://github.com/ammeir/allegro_vita)  
 -Compile:  
   cmake "your worminator repo folder" -DBUILD_TYPE=Release  
   make
