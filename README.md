@@ -1,5 +1,4 @@
-# Worminator
-Port of Worminator 3 for PlayStation Vita.  
+### Port of Worminator 3 for PlayStation Vita.  
 Worminator is a sidescrolling action game where you play as The Worminator and fight your way through many levels of madness and mayhem.
 
 ### Running the game
