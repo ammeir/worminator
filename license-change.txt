@@ -1,0 +1,476 @@
+As described in license.txt the Worminator 3 license has changed as result
+of an email exchange, and the permission for this change has been given by
+David Layne and Keith Palmer in this exchange. This file contains all mails
+of this exchange seperated by lines containing nothing but "###".
+
+###
+
+Message-ID: <43CE2CA2.7060303@hhs.nl>
+Date: Wed, 18 Jan 2006 12:55:14 +0100
+From: Hans de Goede <j.w.r.degoede@hhs.nl>
+User-Agent: Mail/News 1.5 (X11/20060103)
+MIME-Version: 1.0
+To:  keith@uglyslug.com
+Subject: Worminator Source (for a Linux port)
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Note: I'm sending this to you and not to any of the other worminator
+team members as all their emall addresses cause failures.
+Please forward to David Layne adn the rest of the team, and your own
+opinion also is valued ofcourse.
+
+---
+
+Hi,
+
+I was looking for a project to fill my spare time and I ended up with
+the idea of porting some (allegro) games to Linux.
+
+I'm a crazy guy who likes porting and then testing and then coding again
+more then just playing (although I sometimes enjoy just playing) as such
+  I've not yet targeted a specific game to port I just want to expand
+the collection of games available for Linux and enjoy myself at the same
+time.
+
+For more on me see:
+http://home.versatel.nl/jwrdegoede/
+
+I'm most famous for xmame the Unix port of MAME I guess.
+
+Worminator sounds like an excellent candidate for my next project. It
+looks like (I only have Linux so I haven't tried it yet) a very fun game!
+
+As I understand it (this is a bit unclear on the homepage) Worminator3
+is win32 only and thus probably no longer uses allegro or?
+
+Anyways if possible I would like todo a Linux port. I've tried to
+download the version 1 source but I had to register for that. Can you
+send me a copy of the version 1 source or preferably the version 3 one?
+
+And just as important as having access to the source, under what
+conditions (license) can I use it? I've burned myself working on less
+then 100% free software before and I would like to avoid that this time.
+For the definition of freesoftware see:
+www.gnu.org
+
+Any free license will do for me. For the artwork and sounds you could
+use a more artwork and sounds oriented license like the Creative Commons
+licenses.
+
+
+Thanks & Regards,
+
+Hans
+
+###
+
+Return-Path: <keith@uglyslug.com>
+Received: from koko.hhs.nl ([145.52.2.16] verified)
+  by hhs.nl (CommuniGate Pro SMTP 4.3.6)
+  with ESMTP id 44060711 for j.w.r.degoede@hhs.nl; Wed, 18 Jan 2006 15:47:00 +0100
+Received: from exim (helo=koko)
+	by koko.hhs.nl with local-smtp (Exim 4.41)
+	id 1EzEaS-0004d1-1f
+	for j.w.r.degoede@hhs.nl; Wed, 18 Jan 2006 15:47:00 +0100
+Received: from [64.20.44.2] (port=33655 helo=vps.uglyslug.com)
+	by koko.hhs.nl with esmtp (Exim 4.41)
+	id 1EzEaR-0004cp-L7
+	for j.w.r.degoede@hhs.nl; Wed, 18 Jan 2006 15:46:59 +0100
+Received: by vps.uglyslug.com (Postfix, from userid 0)
+	id 7D1BD102DE49E; Wed, 18 Jan 2006 09:46:50 -0500 (EST)
+From: keith@uglyslug.com
+Subject: Re: Worminator Source (for a Linux port)
+To: Hans de Goede <j.w.r.degoede@hhs.nl>
+Cc: 
+X-Originating-IP: 69.177.133.6
+X-Mailer: Usermin 1.250
+Message-Id: <1137595610.27424@vps.uglyslug.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="bound1137595610"
+Date: Wed, 18 Jan 2006 09:46:50 -0500 (EST)
+X-Anti-Virus: Kaspersky Anti-Virus for MailServers 5.5.2/RELEASE, bases: 18012006 #161284, status: clean
+
+This is a multi-part message in MIME format.
+
+--bound1137595610
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+
+Hey Hans de Goede, aight so I still have to speak to Dave and the two other
+guys but... personally, I think it would be *super* cool to have you do a
+Linux port. I don't think we specifically plastered a license on the game, but
+we made the source code available and I don't think it'll be any problem to
+have you work on a Linux port. 
+
+I believe even the latest version of the game still uses Allegro, just we never
+tried to compile on Linux/don't know if there are any compatibility
+issues/never put any time into trying to compile on Linux, and that's why its
+Win32 only :-) I'm not sure if there's actually any specific Win32 code. 
+
+
+In any case, I'll email Dave today and forward him this, he did the
+programming. You might not get a response right away, we're both very busy with
+the beginning of the semester and I'll be out-of-town for the next week... but
+if you don't hear from either one of us within a week, make sure to email me
+again, I think it'd be really great for you to do a Linux port!
+
+ - Keith
+
+
+Hans de Goede wrote ..
+> Note: I'm sending this to you and not to any of the other worminator
+
+###
+
+> Hans
+
+--bound1137595610--
+
+###
+
+The above mail had a full quote of the first mail which has been removed and
+the lines have been wrapped at 80 chars, both for readability.
+
+###
+
+Message-ID: <43CE6883.1040507@hhs.nl>
+Date: Wed, 18 Jan 2006 17:10:43 +0100
+From: Hans de Goede <j.w.r.degoede@hhs.nl>
+User-Agent: Mail/News 1.5 (X11/20060103)
+MIME-Version: 1.0
+To:  keith@uglyslug.com
+Subject: Re: Worminator Source (for a Linux port)
+References: <1137595610.27424@vps.uglyslug.com>
+In-Reply-To: <1137595610.27424@vps.uglyslug.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+keith@uglyslug.com wrote:
+> Hey Hans de Goede, aight so I still have to speak to Dave and the two other guys but... personally, I think it would be *super* cool to have you do a
+ >Linux port. I don't think we specifically plastered a license on the 
+game, but we made the source code available and I don't think it'll be any
+ >problem to have you work on a Linux port.
+> 
+
+First of all I'm very happy to hear that you like the idea, but I really 
+must insist on slapping a clear License (say GPL for example) on the 
+sources. I plan on providing Linux binaries, but its _really_ a show 
+stopper for me if I can't distribute the sources and allow others to 
+freely redistribute both binaries and sources including modified 
+versions. I realise this is a _lot_ to ask, and I can only hope you (the 
+team) are willing to release the source under such a license.
+
+For the artwork (and levels) the story is quite different. A license 
+allowing free redistribution of those is enough. I can fully agree if 
+you don't want others to (re)distribute modified versions of your 
+artwork (and levels).
+
+> I believe even the latest version of the game still uses Allegro, just we never tried to compile on Linux/don't know if there are any compatibility
+ >issues/never put any time into trying to compile on Linux, and that's 
+why its Win32 only :-) I'm not sure if there's actually any specific 
+Win32 code.
+> 
+
+If thats true that would be great I'm pretty sure it won't compile out 
+of the box, but its a good start. Otherwise if its all directx for 
+example I might take a shot too, but it will be much harder to port.
+
+> 
+> In any case, I'll email Dave today and forward him this, he did the programming. You might not get a response right away, we're both very busy with the
+ > beginning of the semester and I'll be out-of-town for the next 
+week... but if you don't hear from either one of us within a week, make 
+sure to email
+ > me again, I think it'd be really great for you to do a Linux port!
+
+I understand that an answer may take some time, thanks for the quick 
+respons sofar.
+
+Thanks & Regards,
+
+Hans
+
+###
+
+Return-Path: <keith@UglySlug.com>
+Received: from koko.hhs.nl ([145.52.2.16] verified)
+  by hhs.nl (CommuniGate Pro SMTP 4.3.6)
+  with ESMTP id 44128777 for j.w.r.degoede@hhs.nl; Fri, 20 Jan 2006 17:29:24 +0100
+Received: from exim (helo=koko)
+	by koko.hhs.nl with local-smtp (Exim 4.41)
+	id 1Ezz8e-0006VF-M4
+	for j.w.r.degoede@hhs.nl; Fri, 20 Jan 2006 17:29:24 +0100
+Received: from [64.20.44.2] (port=49613 helo=vps.uglyslug.com)
+	by koko.hhs.nl with esmtp (Exim 4.41)
+	id 1Ezz8e-0006V9-3G
+	for j.w.r.degoede@hhs.nl; Fri, 20 Jan 2006 17:29:24 +0100
+Received: by vps.uglyslug.com (Postfix, from userid 0)
+	id 1BD61102DE49E; Fri, 20 Jan 2006 11:29:17 -0500 (EST)
+From: keith@UglySlug.com
+Subject: Re: Worminator Source (for a Linux port)
+To: Hans de Goede <j.w.r.degoede@hhs.nl>
+Cc: dml1001@yahoo.com
+X-Originating-IP: 67.101.106.61
+X-Mailer: Usermin 1.250
+Message-Id: <1137774557.14913@vps.uglyslug.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="bound1137774557"
+Date: Fri, 20 Jan 2006 11:29:17 -0500 (EST)
+X-Anti-Virus: Kaspersky Anti-Virus for MailServers 5.5.2/RELEASE, bases: 20012006 #161616, status: clean
+
+This is a multi-part message in MIME format.
+
+--bound1137774557
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+
+Awesome, I see no problem with GPL for everything, it doesn't bother me if
+people change artwork and we've already made the source code available for
+download so why not GPL? 
+
+Just need to run that by Dave (hey Dave! thoughts? GPL OK with you?)
+
+You should be hearing from Dave if you havn't already, he said it might take
+him a few days to get the source code cleaned up and ready for you. 
+
+
+ - Keith
+
+
+Hans de Goede wrote ..
+> keith@uglyslug.com wrote:
+> > Hey Hans de Goede, aight so I still have to speak to Dave and the two
+
+###
+
+> Thanks & Regards,
+> 
+> Hans
+
+--bound1137774557--
+
+###
+
+The above mail had a full quote of the mail, to which it replied, which has
+been removed and the lines have been wrapped at 80 chars, both for readability.
+
+###
+
+Return-Path: <dml1001@yahoo.com>
+Received: from koko.hhs.nl ([145.52.2.16] verified)
+  by hhs.nl (CommuniGate Pro SMTP 4.3.6)
+  with ESMTP id 44141865 for j.w.r.degoede@hhs.nl; Sun, 22 Jan 2006 10:23:07 +0100
+Received: from exim (helo=koko)
+	by koko.hhs.nl with local-smtp (Exim 4.41)
+	id 1F0bRD-0004n8-9R
+	for j.w.r.degoede@hhs.nl; Sun, 22 Jan 2006 10:23:07 +0100
+Received: from [68.142.199.87] (port=31396 helo=web81007.mail.mud.yahoo.com)
+	by koko.hhs.nl with smtp (Exim 4.41)
+	id 1F0bRB-0004n2-Hp
+	for j.w.r.degoede@hhs.nl; Sun, 22 Jan 2006 10:23:06 +0100
+Received: (qmail 78252 invoked by uid 60001); 22 Jan 2006 09:23:04 -0000
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+  s=s1024; d=yahoo.com;
+  h=Message-ID:Received:Date:From:Subject:To:In-Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding;
+  b=BB2dO5A36cMMbqFo3Sx8DpuAEFMpg3/pkItl4yHWU/YB46FHtKyS79RX+XDl8jYOJ4SxSwohaz3JFh8oWNZE58RHVouNjAZ9ZyBNsNsHDy+ZtIb4G/HDT7aVUZc2OgerjEmYKycMe7Cn/0p9zwIZZNSw+KIFzwPW7oJr9yE3/GY=  ;
+Message-ID: <20060122092304.78250.qmail@web81007.mail.mud.yahoo.com>
+Received: from [69.37.40.157] by web81007.mail.mud.yahoo.com via HTTP; Sun, 22 Jan 2006 01:23:04 PST
+Date: Sun, 22 Jan 2006 01:23:04 -0800 (PST)
+From: David Layne <dml1001@yahoo.com>
+Subject: Re: Fwd: Worminator Source (for a Linux port)
+To: j.w.r.degoede@hhs.nl, keith@uglyslug.com
+In-Reply-To: <1137595678.3039@vps.uglyslug.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="0-555987958-1137921784=:56237"
+Content-Transfer-Encoding: 8bit
+X-Anti-Virus: Kaspersky Anti-Virus for MailServers 5.5.2/RELEASE, bases: 21012006 #161851, status: clean
+
+--0-555987958-1137921784=:56237
+Content-Type: multipart/alternative; boundary="0-1522450946-1137921784=:56237"
+
+--0-1522450946-1137921784=:56237
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+  Dear Hans,
+   
+  I understand that you are interested in creating a Linux port of Worminator
+  3. I have attatched the source code for the latest build I have of the game
+  to this e-mail.  In order to test it, you need to download the data file and
+  the maps from our website (I couldn't send everything because the attatchment
+  would have been around 8 megs).
+   
+  Once you compile the executable, make sure that the wormdata.dat file is
+  present as well as the maps folder.  If not, the game will probabaly crash.
+   
+  You are free to port this to linux and release it if you like, the game is
+  freeware and I don't mind it being publically available.  Good luck with your
+  project, I hope you can make sense of this source code.  I wrote it ages ago
+  now, and there are quite a few poorly done portions.  If you need any help,
+  let me know.  The game is still Allegro based, this new version just uses
+  Winallegro.  There shouldnt be alot that you have to change to get it running
+  under Linux (hopefully).
+   
+  Keep me posted as to your progress.  Good luck.
+   
+  -David Layne
+
+
+  
+Hans de Goede wrote ..
+> Note: I'm sending this to you and not to any of the other worminator
+> team members as all their emall addresses cause failures.
+
+###
+
+The above mail had a full quote of the first mail and an attachment containing
+the source which both been removed and the lines have been wrapped at 80 chars,
+both for readability (and size).
+
+###
+
+Message-ID: <43D3748D.1030400@hhs.nl>
+Date: Sun, 22 Jan 2006 13:03:25 +0100
+From: Hans de Goede <j.w.r.degoede@hhs.nl>
+User-Agent: Thunderbird 1.5 (X11/20060112)
+MIME-Version: 1.0
+To: David Layne <dml1001@yahoo.com>
+Subject: Re: Fwd: Worminator Source (for a Linux port)
+References: <20060122092304.78250.qmail@web81007.mail.mud.yahoo.com>
+In-Reply-To: <20060122092304.78250.qmail@web81007.mail.mud.yahoo.com>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+
+
+David Layne wrote:
+> 
+> Dear Hans,
+>  
+> I understand that you are interested in creating a Linux port of 
+> Worminator 3.  I have attatched the source code for the latest build I 
+> have of the game to this e-mail.  In order to test it, you need to 
+> download the data file and the maps from our website (I couldn't send 
+> everything because the attatchment would have been around 8 megs).
+>  
+
+Excellent, many thanks!
+
+> Once you compile the executable, make sure that the wormdata.dat file is 
+> present as well as the maps folder.  If not, the game will probabaly crash.
+> 
+> You are free to port this to linux and release it if you like, the game 
+> is freeware and I don't mind it being publically available. 
+
+Making it publically available was the plan :) Could you ellaborate on 
+the freeware part? I wonder did Keith forward my reply to him about the 
+licensing? I'll include it below for reference.
+
+Anyways freeware is a bit of an ambigious term, software which is free 
+to download, but comes without any source is often called freeware. Do 
+you mean that the data files and the source are publicdomain, iow anyone 
+can do with it what they want (including closed source commercial 
+spinoffs) ?
+
+Public Domain would be fine with me, as that is a legally well defined 
+term, a more restrictive but opensource License like GPL would be fine too.
+
+I'm sorry that I've keep nagging about the License part, but I've burned 
+myself in the past by spending (lots of) freetime on projects without a 
+proper license.
+
+
+> Good luck 
+> with your project, I hope you can make sense of this source code.  I 
+> wrote it ages ago now, and there are quite a few poorly done portions.  
+> If you need any help, let me know.  The game is still Allegro based, 
+> this new version just uses Winallegro.  There shouldnt be alot that you 
+> have to change to get it running under Linux (hopefully).
+>  
+
+Good to hear that its all allegro, that should indeed make the port 
+relativly easy. As for poorly done code I'm a computerscience teacher, 
+I've seen my part of poorly done code.
+
+> Keep me posted as to your progress.  Good luck.
+>  
+
+I most certainly will,
+
+Thanks again,
+
+Hans
+
+-- the promised mail to Keith ---
+
+keith@uglyslug.com wrote:
+ > Hey Hans de Goede, aight so I still have to speak to Dave and the two 
+
+###
+
+The above mail had a full quote of the mail to Keith about licensing which
+has been removed readability.
+
+The first alinea of the mail below is a reply to a technical question
+which was asked in an omitted mail. This mail has been ommited because its
+not relevant to the license change.
+
+###
+
+Return-Path: <dml1001@yahoo.com>
+Received: from koko.hhs.nl ([145.52.2.16] verified)
+  by hhs.nl (CommuniGate Pro SMTP 4.3.6)
+  with ESMTP id 44209367 for j.w.r.degoede@hhs.nl; Tue, 24 Jan 2006 14:16:12 +0100
+Received: from exim (helo=koko)
+	by koko.hhs.nl with local-smtp (Exim 4.41)
+	id 1F1O1r-0006hE-80
+	for j.w.r.degoede@hhs.nl; Tue, 24 Jan 2006 14:16:12 +0100
+Received: from [68.142.199.82] (port=44806 helo=web81002.mail.mud.yahoo.com)
+	by koko.hhs.nl with smtp (Exim 4.41)
+	id 1F1O1V-0006fX-Nu
+	for j.w.r.degoede@hhs.nl; Tue, 24 Jan 2006 14:16:07 +0100
+Received: (qmail 9246 invoked by uid 60001); 24 Jan 2006 13:15:48 -0000
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+  s=s1024; d=yahoo.com;
+  h=Message-ID:Received:Date:From:Subject:To:In-Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding;
+  b=o1EgPiH7GCNhWAem0DYFDJYGJVsRvMaCqa1ZJB/W/R/EoxmTjSYQyYj47QzyduHiHbyI+FkDLrPq5sAdw1XwOL5BpVQFAtagaf/9HrobvvZjSSBt8kXUCH74+hfOIaBIXiXM7szGBpRfUnhSoWvZveYIhQ0oGV1lTC8zV7FMsUk=  ;
+Message-ID: <20060124131548.9244.qmail@web81002.mail.mud.yahoo.com>
+Received: from [69.37.40.157] by web81002.mail.mud.yahoo.com via HTTP; Tue, 24 Jan 2006 05:15:46 PST
+Date: Tue, 24 Jan 2006 05:15:46 -0800 (PST)
+From: David Layne <dml1001@yahoo.com>
+Subject: Re: Fwd: Worminator Source (for a Linux port)
+To: Hans de Goede <j.w.r.degoede@hhs.nl>
+In-Reply-To: <43D5ECD5.6090704@hhs.nl>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="0-1546335489-1138108546=:8366"
+Content-Transfer-Encoding: 8bit
+X-Anti-Virus: Kaspersky Anti-Virus for MailServers 5.5.2/RELEASE, bases: 24012006 #162313, status: clean
+
+--0-1546335489-1138108546=:8366
+Content-Type: multipart/alternative; boundary="0-641554036-1138108546=:8366"
+
+--0-641554036-1138108546=:8366
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+  Good call, thats my fault.  I forgot that my latest build had some graphical
+  changes in the data file.  I'm attatching the newest data file.  Glad the
+  project is going well.  I will release a new version of worminator 3 soon
+  with the new data file included.  The life essence things were added to make
+  the game a little easier, alot of the weaker enemies drop them now and they
+  heal you when you collect them.
+   
+  BTW, feel free to GPL the code, I was planning on publically releasing it
+  anyway but I kept holding back because I was planning on adding a few more
+  things to it and I just never got around to it.  Just leave me listed as the
+  original author of the code and yourself as the developer of the linux port
+  and everything should be fine.
+
+Hans de Goede <j.w.r.degoede@hhs.nl> wrote:
+  Hi David & Keith,
+
+###
+
+The above mail had a full quote of the omitted mail and an attachment
+containing wormdata.dat which both been removed and the lines have been wrapped
+at 80 chars, both for readability (and size).
