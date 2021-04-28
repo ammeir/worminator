@@ -1,18 +1,20 @@
 ### Port of Worminator 3 for PlayStation Vita.  
-Worminator is a sidescrolling action game where you play as The Worminator and fight your way through many levels of madness and mayhem.
+Worminator is a sidescrolling action platformer game where you play as The Worminator and fight your way through many levels of madness and mayhem.
 
 ### Running the game
 -Unzip `worminator.zip` and copy the contents to `ux0:data/` so that you have a folder `ux0:data/worminator/data`  
 -Install `worminator.vpk`
 
 ### Controls
-Left analog stick / Dpad = move player  
+Left analog stick = move player
+Dpad = move player  
 Square = shoot  
 Cross = jump  
-Triangle =  statistics  
 Circle =  duck  
-R = bullet time  
-L = change weapon  
+L = bullet time  
+R = change weapon 
+Triangle + L = statistics  
+Triangle + R = change ammo
 Select = main menu  
 Start = map  
 
