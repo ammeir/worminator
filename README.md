@@ -12,9 +12,9 @@ Square = shoot
 Cross = jump  
 Circle =  duck  
 L = bullet time  
-R = change weapon 
+R = change weapon  
 Triangle + L = statistics  
-Triangle + R = change ammo
+Triangle + R = change ammo  
 Select = main menu  
 Start = map  
 
