@@ -6,7 +6,7 @@ Worminator is a sidescrolling action platformer game where you play as The Wormi
 -Install `worminator.vpk`
 
 ### Controls
-Left analog stick = move player
+Left analog stick = move player  
 Dpad = move player  
 Square = shoot  
 Cross = jump  
