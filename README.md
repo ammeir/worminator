@@ -31,9 +31,9 @@ Start = map
 For a debug version replace Release with Debug.
 
 ### Known issues
-Game freezes in level 14 if the player dies riding a tank 
+Game freezes sometimes when player dies riding a tank. 
 
 ### Credits
-Thanks to David Layne and team for making this game, releasing the source and making it freeware.  
+Thanks to David Layne and the rest of the Worminator team for making this game, releasing the source and making it freeware.  
 Thanks to bosshunter (@bhunterzor) for introducing the game and for beta testing.
 
