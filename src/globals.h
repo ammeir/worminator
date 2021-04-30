@@ -70,8 +70,8 @@
 #define INPUT_FIRE 5
 #define INPUT_DUCK 6
 #define INPUT_MAP 7
-#define INPUT_STATS 8
-#define INPUT_BULLIT_TIME 9
+#define INPUT_BULLIT_TIME 8
+#define INPUT_STATS 9
 #define INPUT_LOOK 10
 #define INPUT_WEAPON_0 11
 #define INPUT_WEAPON_1 12

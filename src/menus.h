@@ -256,7 +256,6 @@ char *skin_names[] = {
 	"MUMMY WORM SKIN",
 	"THE ANGEL SKIN",
 	"THE DEVIL SKIN",
-	"TANK_SKIN",
 	NULL
 };
 
@@ -754,7 +753,7 @@ void wormy_skins_submenu(BITMAP* backup_bitmap)
 
 		if (key[KEY_DOWN]) {
 			while (key[KEY_DOWN]) rest(1);
-			if (highlighted < TANK_SKIN)
+			if (highlighted < THE_DEVIL_SKIN)
 				highlighted++;
 		}
 
@@ -796,6 +795,7 @@ void wormy_cheats_submenu(BITMAP* backup_bitmap)
 	static int highlighted = 0;
 	int toggle;
 	int save_needed = 0;
+	int update_sound = FALSE;
 	
 	update_cheats_menu();
 
@@ -850,6 +850,8 @@ void wormy_cheats_submenu(BITMAP* backup_bitmap)
 				break;
 			case COOL_MODE:
 				wormy_config.cool_mode = wormy_config.cool_mode? FALSE: TRUE;
+				// Cool mode has own midi tune.
+				update_sound = TRUE;
 				break;
 			}
 
@@ -870,6 +872,9 @@ void wormy_cheats_submenu(BITMAP* backup_bitmap)
 	} while (TRUE);
 
 _exit:
+
+	if (update_sound)
+		reset_sound();
 
 #ifdef PSVITA
 	if (save_needed){
@@ -2955,9 +2960,6 @@ void display_recap(char show_mouse_pointer)
 void check_high_score()
 {
 	int script_loop, script_loop_2, buf;
-
-	// Test the input dialog after selecting quit from main menu.
-	//player.score = 1010;
 
 	if (!playing_demo && !recording_demo) {
 		for (script_loop = 0; script_loop < 10; script_loop++) {

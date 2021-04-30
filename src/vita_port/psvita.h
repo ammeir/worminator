@@ -6,7 +6,6 @@
 #include "ime_dialog.h"
 #include <psp2/types.h>
 
-#define PSV_APP_DIR2			      "ux0:"
 #define PSV_APP_DIR			          "ux0:data/worminator/"
 #define PSV_DATA_DIR PSV_APP_DIR      "data/"
 #define PSV_SAVE_DIR PSV_APP_DIR	  "save/"

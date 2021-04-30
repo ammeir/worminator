@@ -504,11 +504,18 @@ void handle_input()
 
 	// Do some idle timer junk
 	idle_timer++;
-	if (idle_timer > 16384) idle_timer = 16384;
-	for (i = 0; i < KEY_MAX; i++) if (key[i]) idle_timer = 0;
+	if (idle_timer > 16384) 
+		idle_timer = 16384;
+
+	for (i = 0; i < KEY_MAX; i++){
+		if (key[i]) idle_timer = 0;
+
+		// Lock down/read the keys
+		lockkey[i] = key[i];
+	}
 
 	// Lock down/read the keys
-	for (i = 0; i < KEY_MAX; i++) lockkey[i] = key[i];
+	//for (i = 0; i < KEY_MAX; i++) lockkey[i] = key[i]; 
 
 	// Update the input buffer
 	if (playing_demo) {
@@ -518,9 +525,43 @@ void handle_input()
 			input_buffer[i] = FALSE;
 	} else {
 		for (i = 0; i < 28; i++) {
-			if (wormy_config.controls[i] != -1 && lockkey[wormy_config.controls[i]]) input_buffer[i] = TRUE;
-			else if (wormy_config.secondary_controls[i] != -1 && lockkey[wormy_config.secondary_controls[i]]) input_buffer[i] = TRUE;
-			else input_buffer[i] = FALSE;
+
+#ifdef PSVITA
+			// Vita doesn't have enough buttons for all the actions we need.
+			// Use combo keys for stats and change ammo.
+			// stats = triangle + left trigger.
+			// change ammo = triangle + right trigger.
+			if (i == INPUT_STATS){
+				if (lockkey[KEY_BACKSPACE] && lockkey[KEY_LSHIFT]){
+					input_buffer[INPUT_STATS] = 1;
+					// Disable left trigger action.
+					input_buffer[INPUT_BULLIT_TIME] = 0; 
+				}
+				else
+					input_buffer[INPUT_STATS] = 0;
+				
+				continue;
+			}
+			if (i == INPUT_CHANGE_AMMO_TYPE){
+				
+				if (lockkey[KEY_BACKSPACE] && lockkey[KEY_RSHIFT]){
+					input_buffer[INPUT_CHANGE_AMMO_TYPE] = 1;
+					// Disable right trigger action.
+					input_buffer[INPUT_WEAPON_NEXT] = 0;
+				}
+				else
+					input_buffer[INPUT_CHANGE_AMMO_TYPE] = 0;
+				
+				continue;
+			}
+#endif
+			
+			if (wormy_config.controls[i] != -1 && lockkey[wormy_config.controls[i]]) 
+				input_buffer[i] = TRUE;
+			else if (wormy_config.secondary_controls[i] != -1 && lockkey[wormy_config.secondary_controls[i]]) 
+				input_buffer[i] = TRUE;
+			else 
+				input_buffer[i] = FALSE;
 		}
 	}
 
@@ -1816,6 +1857,7 @@ void show_map()
 
 	// PSVITA FIX: Exiting the map requires a long press of a button.
 	// Optimizing this cpu hungry function solves the issue.
+	
 	// Fill background with black so we don't have to draw every pixel.
 	rectfill(double_buffer, 0, 0, 256, 192, 0); 
 	// Precalculate colors.
@@ -1828,9 +1870,6 @@ void show_map()
 	int yellow_color = makecol(255, 255, 0);
 	int map_width = worminator_map.map_width;
 	int map_height = worminator_map.map_height;
-
-	//PSV_DEBUG("map_width = %d", map_width);
-	//PSV_DEBUG("map_height = %d", map_height);
 
 	// Draw in all info tile data
 	for (x = 0; x < 256; x++) {
@@ -2946,20 +2985,16 @@ void load_config()
 					get_config_int("Keys", "weapon_next", KEY_BACKSPACE);
 
 #elif defined (PSVITA)
+	// Vita is lacking buttons to handle all the actions we need.
+	// The solution is to use combo keys.
+	// Stats will be Triangle + L.
+	// Change ammo will be Triangle + R.
 	wormy_config.controls[INPUT_DUCK] = get_config_int("Keys", "duck", KEY_LCONTROL);
 	wormy_config.controls[INPUT_MAP] = get_config_int("Keys", "map", KEY_TAB);
-	wormy_config.controls[INPUT_STATS] = get_config_int("Keys", "stats", KEY_BACKSPACE);
-
-	//wormy_config.controls[INPUT_WEAPON_LAST] =
-	//				get_config_int("Keys", "weapon_last", KEY_LSHIFT);
-	wormy_config.controls[INPUT_WEAPON_NEXT] =
-					get_config_int("Keys", "weapon_next", KEY_RSHIFT);
-	wormy_config.controls[INPUT_BULLIT_TIME] = get_config_int("Keys", "bullettime",
-								  KEY_LSHIFT);
-
-	//wormy_config.controls[INPUT_CHANGE_AMMO_TYPE] = get_config_int("Keys",
-	//							       "change_ammo", KEY_TILDE);
-	 
+	wormy_config.controls[INPUT_STATS] = get_config_int("Keys", "stats", KEY_BACKSPACE); 
+	wormy_config.controls[INPUT_CHANGE_AMMO_TYPE] = get_config_int("Keys","change_ammo", KEY_BACKSPACE);
+	wormy_config.controls[INPUT_WEAPON_NEXT] = get_config_int("Keys", "weapon_next", KEY_RSHIFT);
+	wormy_config.controls[INPUT_BULLIT_TIME] = get_config_int("Keys", "bullettime", KEY_LSHIFT);
 #else
 	wormy_config.controls[INPUT_DUCK] = get_config_int("Keys", "duck", KEY_Z);
 	wormy_config.controls[INPUT_MAP] = get_config_int("Keys", "map", KEY_TAB);
@@ -3478,7 +3513,7 @@ void reset_sound()
 	// Restart the music
 	if (current_level != -69) {
 		unsigned char sprite_spawn_loop, sprite_type;
-		//WORMINATOR_MAP_FORMAT buffer_map; // PSVITA: This causes stack overflow on vita
+		WORMINATOR_MAP_FORMAT buffer_map;
 
 		//PSV_DEBUG("Opening map file: %s", current_level_mapfile_path);
 		FILE *map_file = fopen(current_level_mapfile_path, "rb");
@@ -3556,7 +3591,7 @@ void initialize()
 	add_console_line("Initilizing keyboard.");
 	install_keyboard();
 	
-#ifndef PSVITA // Disable mouse for Vita. Joystick is akward to use as a mouse.
+#ifndef PSVITA // Disable mouse for Vita. Joystick is awkward to use as a mouse.
 	add_console_line("Initilizing mouse.");
 	install_mouse();
 	show_mouse(screen);
@@ -3615,7 +3650,7 @@ void initialize()
 	// Set up the animation timer to update 100 times a second
 	add_console_line("Installing timers.");
 	LOCK_FUNCTION(update_animations);
-	install_int(update_animations, 10);
+	install_int(update_animations, 17/*10*/); // Why so frequently?
 
 	// Set up the game speed timer
 	LOCK_VARIABLE(speed_counter);
@@ -3775,6 +3810,7 @@ void initialize()
 	// Back to default speed.
 	psvChangeClockSpeed(333);
 #endif
+
 }
 
 
