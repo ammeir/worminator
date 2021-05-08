@@ -36,5 +36,5 @@ Game freezes sometimes when player dies riding a tank.
 
 ### Credits
 Thanks to David Layne and the rest of the Worminator Team for making this game, releasing the source and making it freeware.  
-Thanks to bosshunter (@bhunterzor) for introducing the game and for beta testing.
+Thanks to bosshunter (@bhunterzor) for telling me about the game and for beta testing.
 
