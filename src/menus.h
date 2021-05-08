@@ -304,31 +304,27 @@ void blit_simple_menu(char *names[], int chosen_option, BITMAP* backup_bitmap)
 					  (i == chosen_option ? 255 : 7), 16);
 		}
 
-	}else{
+	}
+	else{
 		// Draw the menu on a background box to make it more visible.
 
-		// Create background bitmap. 
-		BITMAP* backgroud_box = create_bitmap(254, 174);
-
-		rectfill(backgroud_box, 0, 0, backgroud_box->w, backgroud_box->h, 200); // Frame
-		rectfill(backgroud_box, 1, 1, backgroud_box->w-2, backgroud_box->h-2, 16);
+		rectfill(backgroud_menu_box, 0, 0, backgroud_menu_box->w, backgroud_menu_box->h, 200); // Frame
+		rectfill(backgroud_menu_box, 1, 1, backgroud_menu_box->w-2, backgroud_menu_box->h-2, 16);
 		
 		// Calculate y pos of first menu item.
-		y = (backgroud_box->h - (items * 12)) / 2;
+		y = (backgroud_menu_box->h - (items * 12)) / 2;
 
 		for (i=0; names[i]; i++, y += 12) {
-			textout_centre_ex(backgroud_box, font, names[i],
-							  backgroud_box->w/2,  y,
+			textout_centre_ex(backgroud_menu_box, font, names[i],
+							  backgroud_menu_box->w/2,  y,
 							  (i == chosen_option ? 255 : 7), 16);
 		}
 
 		// Draw to background box to the swap buffer.
-		blit(backgroud_box, swap_buffer, 0, 0, 
-			(swap_buffer->w - backgroud_box->w) / 2, 
-			(swap_buffer->h - backgroud_box->h) / 2, 
-			backgroud_box->w, backgroud_box->h); 
-
-		destroy_bitmap(backgroud_box);
+		blit(backgroud_menu_box, swap_buffer, 0, 0, 
+			(swap_buffer->w - backgroud_menu_box->w) / 2, 
+			(swap_buffer->h - backgroud_menu_box->h) / 2, 
+			backgroud_menu_box->w, backgroud_menu_box->h); 
 	}
 
 	blit_to_screen(swap_buffer);
@@ -406,56 +402,6 @@ void blit_simple_skins_menu(char *names[], int highlighted, int selected, BITMAP
 
 	blit_to_screen(swap_buffer);
 }
-
-//void blit_simple_menu(char *names[], int chosen_option)
-//{
-//	int i = 0;
-//	int y = 20;
-//	//int box_width = 0;
-//	//int box_height = y;
-//	int items = 0;
-//
-//	// Count menu items.
-//	for (i=0; names[i]; i++)
-//		items++;
-//
-//	// Create background bitmaps. 
-//	BITMAP* inner_box = create_bitmap(250, 170); 
-//	BITMAP* outer_box = create_bitmap(254, 174); // For the frame.
-//
-//	//BITMAP* tmp = create_bitmap(box_width, box_height); // background bitmap
-//	clear_to_color(inner_box, 16); 
-//	clear_to_color(outer_box, 200); 
-//
-//	// Calculate y pos of first menu item.
-//	y = (inner_box->h - (items * 12)) / 2;
-//
-//	for (i=0; names[i]; i++, y += 12) {
-//		textout_centre_ex(inner_box, font, names[i],
-//						  inner_box->w/2,  y,
-//						  (i == chosen_option ? 255 : 7), 16);
-//	}
-//
-//
-//	blit(inner_box, outer_box, 0, 0, 2, 2, inner_box->w, inner_box->h); 
-//
-//	// Draw to screen bitmap.
-//	/*blit(outer_box, screen, 0, 0, 
-//		(screen->w - outer_box->w) / 2, 
-//		(screen->h - outer_box->h) / 2, 
-//		outer_box->w, outer_box->h); */
-//
-//	// Draw to screen bitmap.
-//	blit(outer_box, swap_buffer, 0, 0, 
-//		(swap_buffer->w - outer_box->w) / 2, 
-//		(swap_buffer->h - outer_box->h) / 2, 
-//		outer_box->w, outer_box->h); 
-//
-//	blit_to_screen(swap_buffer);
-//	
-//	destroy_bitmap(inner_box);
-//	destroy_bitmap(outer_box);
-//}
 
 void update_options()
 {
@@ -873,8 +819,9 @@ void wormy_cheats_submenu(BITMAP* backup_bitmap)
 
 _exit:
 
-	if (update_sound)
-		reset_sound();
+	if (update_sound){
+		//reset_sound(); // This makes the menu unresponsive for few seconds.
+	}
 
 #ifdef PSVITA
 	if (save_needed){
@@ -1229,9 +1176,11 @@ void wormy_menu_old()
 	do {
 		idle_speed_counter = 0;
 		// Game submenu button
-		if (mouse_b & 1 && mouse_x >= 8 && mouse_x <= 50 && mouse_y >= 4 && mouse_y <= 17) {
-			while (mouse_b & 1);
-			if (mouse_x >= 8 && mouse_x <= 50 && mouse_y >= 4 && mouse_y <= 17) {
+		if (mouse_b & 1 && mouse_x >= 0 && mouse_x <= 50 && mouse_y >= 0 && mouse_y <= 17) {
+			
+			while (mouse_b & 1) rest(1);
+			
+			if (mouse_x >= 0 && mouse_x <= 50 && mouse_y >= 0 && mouse_y <= 17) {
 				// Backup what is currently where the new menu will be and then draw the menu
 				show_mouse(NULL);
 				blit(swap_buffer, backup_bitmap, 12, 20, 0, 0, 80, 176);
@@ -1406,8 +1355,8 @@ void wormy_menu_old()
 					}
 					// Clicked off submenu - issue return command
 					else if (mouse_b & 1 && (mouse_x < 12 || mouse_x > 91 || mouse_y < 20 || mouse_y > 195)) {
-						/* while (mouse_b & 1);
-						 * if (mouse_x < 12 || mouse_x > 91 || mouse_y < 20 || mouse_y > 195) */close_submenu = TRUE;
+						while (mouse_b & 1) rest(1);
+						close_submenu = TRUE;
 					}
 
 					if (idle_speed_counter == 0) rest(1);
@@ -2003,10 +1952,23 @@ void wormy_menu_old()
 
 		// Play a demo if appropriate
 		if (idle_counter >= 4096 && current_level == -69) {
+
+			char demo_file_name[64];
+	
 			show_mouse(NULL);
-			if (demo_number == 1) play_demo("demo1.dem");
-			else if (demo_number == 2) play_demo("demo2.dem");
-			else play_demo("demo3.dem");
+
+			if (demo_number == 1){
+				sprintf(demo_file_name,"%sdemo1.dem", PSV_DATA_DIR);
+				play_demo(demo_file_name);
+			}
+			else if (demo_number == 2){
+				sprintf(demo_file_name,"%sdemo2.dem", PSV_DATA_DIR);
+				play_demo(demo_file_name);
+			}
+			else{
+				sprintf(demo_file_name,"%sdemo3.dem", PSV_DATA_DIR);
+				play_demo(demo_file_name);
+			}
 			stretch_blit(worminator_data_file[MAIN_TITLE_SCREEN].dat, swap_buffer, 0, 0, 640, 480, 0, 0, screen_width, screen_height);
 			draw_sprite(swap_buffer, worminator_data_file[WORMY_MENU_BAR].dat, 0, 0);
 			blit(swap_buffer, backup_bitmap, 12, 20, 0, 0, 80, 96);

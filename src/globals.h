@@ -246,6 +246,7 @@ BITMAP *worminator_tiles;
 BITMAP *parallax_background;
 BITMAP *spawned_sprite;
 BITMAP *screenbackup;
+BITMAP *backgroud_menu_box;
 
 // This is used for the text messages in the game
 TEXT_MESSAGE text_messages[MAX_TEXT_MESSAGES];
