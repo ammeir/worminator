@@ -176,11 +176,11 @@ void stardust_particle_ai(int sprite_number)
 		sprites[sprite_number].x_acceleration = (float)((rand() % 20) - 10.00) / 10.00;
 		sprites[sprite_number].y_acceleration = (float)((rand() % 20) - 10.00) / 10.00;
 	} else if (sprites[sprite_number].action_state == 5) {
-		sprites[sprite_number].x_acceleration = fixtof(fsin(itofix(sprites[sprite_number].direction)));
+		sprites[sprite_number].x_acceleration = fixtof(fixsin(itofix(sprites[sprite_number].direction)));
 		if (sprites[sprite_number].direction == -1) sprites[sprite_number].direction = 0;
 		else sprites[sprite_number].direction += 8;
 	} else if (sprites[sprite_number].action_state == 6) {
-		sprites[sprite_number].y_acceleration = fixtof(fsin(itofix(sprites[sprite_number].direction)));
+		sprites[sprite_number].y_acceleration = fixtof(fixsin(itofix(sprites[sprite_number].direction)));
 		if (sprites[sprite_number].direction == -1) sprites[sprite_number].direction = 0;
 		else sprites[sprite_number].direction += 8;
 	}

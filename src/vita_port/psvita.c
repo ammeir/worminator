@@ -82,39 +82,6 @@ int psvChangeClockSpeed(int speed)
 
 /* Missing functions in Vita SDK */
 
-int chdir(const char *path)
-{
-	return 0;
-}
-
-int mkdir(const char* path, mode_t mode)
-{
-	int ret = sceIoMkdir(path, 0777); // Don't put mode parameter here. Give always full permissions.
-	
-	if (ret < 0){
-		// Don't return error if dir already exist
-		if (!(dirExist(path) && ret == (int)SCE_ERROR_ERRNO_EEXIST)){
-			return -1;
-		}
-	}
-
-	return 0;
-}
-
-int rmdir(const char *path)
-{
-	if (sceIoRemove(path) < 0)
-		return -1;
-
-	return 0;
-}
-
-//int usleep(long usec)
-//{
-//    sceKernelDelayThread(usec);
-//    return 0;
-//}
-
 int usleep(useconds_t usec)
 {
     sceKernelDelayThread(usec);

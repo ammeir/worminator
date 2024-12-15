@@ -2974,12 +2974,12 @@ void get_highscore_name(int position)
 		if (key[KEY_SPACE]){
 			
 			// To prevent flickering we have to stop the main rendering timer.
-			psv_remove_render_timer();
+			al_psv_remove_render_timer();
 
 			psvInputDialog("Enter your name", "", input);
 			
 			// Restore main rendering timer.
-			psv_install_render_timer();
+			al_psv_install_render_timer();
 
 			blit(worminator_data_file[WORMY_HIGH_SCORE_INPUT_BOX].dat, buffer, 0, 0, 0, 0, 128, 64);
 			textout(buffer, font, input, 6, 49, 5);

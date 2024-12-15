@@ -43,8 +43,8 @@
 #ifdef PSVITA
 #include "psvita.h"
 extern void psv_set_app_dir(const char* dir);
-extern void psv_install_render_timer();
-extern void psv_remove_render_timer();
+extern void al_psv_install_render_timer();
+extern void al_psv_remove_render_timer();
 #endif
 
 #include "prototypes.h"	// All function prototypes
@@ -359,7 +359,7 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	PSV_DEBUG("main()");
+	//PSV_DEBUG("main()");
 
 	// This dummy value indicates that no level is loaded
 	current_level = -69;
@@ -2317,7 +2317,7 @@ void fire_railgun()
 		sx = ((int)(screen_width * .8) / 2) + 32;
 		if (x2 - (player.x_position_in_pixels + 37) < ((int)(screen_width * .8) / 2) + 32) sx = x2 - (player.x_position_in_pixels + 37);
 		for (y = 0; y < sx; y++) {
-			x1 = fixtof(fsin(itofix(y * 12))) * 4;
+			x1 = fixtof(fixsin(itofix(y * 12))) * 4;
 			if (rand() % 64 < 32) spawn_stardust(player.x_position_in_pixels + 37 + y, player.y_position_in_pixels + 13 + x1, 0, 0, 217 + (float)((rand() % 20) - 10.00) / 10.00, 212 + (float)((rand() % 20) - 10.00) / 10.00, 1, 1);
 			else spawn_stardust(player.x_position_in_pixels + 37 + y, player.y_position_in_pixels + 13 + x1, (float)((rand() % 20) - 10.00) / 80.00, (float)((rand() % 20) - 10.00) / 80.00, 217 - 64 + (float)((rand() % 20) - 10.00) / 10.00, 212 - 64 + (float)((rand() % 20) - 10.00) / 10.00, 1, 1);
 		}
@@ -2355,7 +2355,7 @@ void fire_railgun()
 		sx = ((int)(screen_width * .8) / 2) + 32;
 		if (player.x_position_in_pixels - 6 - x2 < ((int)(screen_width * .8) / 2) + 32) sx = player.x_position_in_pixels - 6 - x2;
 		for (y = 0; y < sx; y++) {
-			x1 = fixtof(fsin(itofix(y * 12))) * 4;
+			x1 = fixtof(fixsin(itofix(y * 12))) * 4;
 			if (rand() % 64 < 32) spawn_stardust(player.x_position_in_pixels - 6 - y, player.y_position_in_pixels + 13 + x1, (float)((rand() % 20) - 10.00) / 80.00, (float)((rand() % 20) - 10.00) / 80.00, 217 + (float)((rand() % 20) - 10.00) / 10.00, 212 + (float)((rand() % 20) - 10.00) / 10.00, 1, 1);
 			else spawn_stardust(player.x_position_in_pixels - 6 - y, player.y_position_in_pixels + 13 + x1, 0, 0, 217 - 64 + (float)((rand() % 20) - 10.00) / 10.00, 212 - 64 + (float)((rand() % 20) - 10.00) / 10.00, 1, 1);
 		}

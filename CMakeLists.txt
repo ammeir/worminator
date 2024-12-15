@@ -38,10 +38,7 @@ endif (BUILD_TYPE MATCHES Release)
 
 add_definitions(-DPSVITA)
 add_definitions(-DALLEGRO_PSV)
-
-#Uncomment to use local main
-#add_definitions(-DUSE_CONSOLE)
-
+add_definitions(-DALLEGRO_NO_MAGIC_MAIN) # Don't redirect to allegro main
 
 # Add any additional include paths here
 include_directories(
@@ -59,6 +56,7 @@ target_link_libraries(${PROJECT_NAME} ${ALLEGRO_LIB}
   vita2d
   SceDisplay_stub
   SceCtrl_stub
+  SceTouch_stub
   SceAudio_stub
   SceSysmodule_stub
   SceGxm_stub
@@ -80,7 +78,7 @@ target_link_libraries(${PROJECT_NAME} ${ALLEGRO_LIB}
   m)
 
 
-vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME})
+#vita_create_self(${PROJECT_NAME}.self ${PROJECT_NAME})
 vita_create_self(eboot.bin ${PROJECT_NAME} UNSAFE)
 
 vita_create_vpk(${PROJECT_NAME}.vpk ${VITA_TITLEID} eboot.bin

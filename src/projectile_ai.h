@@ -574,13 +574,13 @@ void worminator_spikestar_ai(int sprite_number)
 	// The following updates are based on the type of spikestar (red - sine, blue - negative sine, yellow - straight)
 	if (sprites[sprite_number].frame == WORMINATOR_SPIKESTAR_RED_FLY) {
 		// Adjust the spikestar's y velocity to conform to a sine wave path
-		sprites[sprite_number].y_acceleration = fixtof(fsin(itofix(sprites[sprite_number].rotate_factor)));
+		sprites[sprite_number].y_acceleration = fixtof(fixsin(itofix(sprites[sprite_number].rotate_factor)));
 
 		// Stardust smoke trail
 		if (out_of_player_range(sprite_number) == FALSE) spawn_stardust((sprites[sprite_number].x_position_in_pixels + sprites[sprite_number].width / 2), (sprites[sprite_number].y_position_in_pixels + sprites[sprite_number].height / 2), 0, .05, 77, 66, 2, 1);
 	} else if (sprites[sprite_number].frame == WORMINATOR_SPIKESTAR_BLUE_FLY) {
 		// Adjust the spikestar's y velocity to conform to an inverse sine wave path
-		sprites[sprite_number].y_acceleration = -fixtof(fsin(itofix(sprites[sprite_number].rotate_factor)));
+		sprites[sprite_number].y_acceleration = -fixtof(fixsin(itofix(sprites[sprite_number].rotate_factor)));
 
 		// Stardust smoke trail
 		if (out_of_player_range(sprite_number) == FALSE) spawn_stardust((sprites[sprite_number].x_position_in_pixels + sprites[sprite_number].width / 2), (sprites[sprite_number].y_position_in_pixels + sprites[sprite_number].height / 2), 0, -.05, 157, 146, 2, 1);
